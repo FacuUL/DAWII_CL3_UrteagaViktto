@@ -1,1 +1,15 @@
-<p>pregunta3 works!</p>
+<div class="container">
+  <h2>Calculadora de Préstamo CL3</h2>
+
+  <mat-form-field>
+    <mat-label>Monto para Préstamo:</mat-label>
+    <input matInput [(ngModel)]="montoPrestamo" type="number" placeholder="Ingrese el monto por favor">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="calcularCuotas()">Calcular Cuotas Prestamo</button>
+
+  <div *ngIf="cuotas > 0" class="resultado">
+    <p>Pagar en: {{ cuotas }} cuotas.</p>
+    <p>Precio de cada cuota: {{ montoCuota | currency }}</p>
+  </div>
+</div>
