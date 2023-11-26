@@ -25,6 +25,7 @@ import { PaginaErrorComponent } from './preguntas/pagina-error/pagina-error.comp
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path:'preg2',component: Pregunta2Component},
       {path:'preg3',component: Pregunta3Component},
