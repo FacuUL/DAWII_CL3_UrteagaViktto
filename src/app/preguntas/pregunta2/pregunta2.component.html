@@ -1,0 +1,22 @@
+<div>
+    <h2>Calculadora de Descuento</h2>
+  
+    <mat-form-field>
+      <mat-label>Cantidad:</mat-label>
+      <input matInput [(ngModel)]="cantidad" type="number" placeholder="Ingrese la cantidad">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Precio:</mat-label>
+      <input matInput [(ngModel)]="precio" type="number" placeholder="Ingrese el precio">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="calcularDescuento()">Calcular Descuento</button>
+  
+    <div *ngIf="total !== undefined">
+      <p>Total a Pagar: {{ total | currency }}</p>
+    </div>
+    <div>
+        <p>Se hace descuento del 20% del precio no del total a pagar</p>
+      </div>
+  </div>
