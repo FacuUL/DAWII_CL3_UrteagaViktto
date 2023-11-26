@@ -11,6 +11,8 @@ import { Pregunta2Component } from './preguntas/pregunta2/pregunta2.component';
 import { Pregunta3Component } from './preguntas/pregunta3/pregunta3.component';
 import { Pregunta4Component } from './preguntas/pregunta4/pregunta4.component';
 import { PaginaErrorComponent } from './preguntas/pagina-error/pagina-error.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { PaginaErrorComponent } from './preguntas/pagina-error/pagina-error.comp
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    MatListModule, MatIconModule,
     RouterModule.forRoot([
       {path:'preg2',component: Pregunta2Component},
       {path:'preg3',component: Pregunta3Component},

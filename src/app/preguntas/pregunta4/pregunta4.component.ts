@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { LocationService } from '../location.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+interface Location {
+  id: number;
+  name: string;
+ }
+
 @Component({
   selector: 'app-pregunta4',
   templateUrl: './pregunta4.component.html',
@@ -9,19 +14,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class Pregunta4Component {
   locations: Location[] = [];
-  displayedColumns: string[] = ['id', 'name','type','dimension','residents','url','created'];
 
-  constructor(private locationService: LocationService,private snackBar: MatSnackBar) {}
+  constructor(private locationService: LocationService) {}
 
   ngOnInit(): void {
-    this.locationService.listarLocations()
-      .subscribe(
-        (data) => {
-          this.locations = data 
-        },
-        (error) => {
-          this.snackBar.open('Error al consumir API Rest', 'OK', {duration: 50000})
-        }        
-      )
+    this.locationService.getEvenIdLocations().subscribe(
+      (data) => {
+        this.locations = data;
+      },
+      (error) => {
+        console.error('Error al obtener los locations', error);
+      }
+    );
   }
 }

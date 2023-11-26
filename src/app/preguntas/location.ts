@@ -1,10 +1,4 @@
-export interface locations {
+export interface Location {
     id: string,
-    name: string,
-    type: string,
-    dimension: string,
-    residents: string,
-    url: string,
-    created: string,
-    
+    name: string
 }

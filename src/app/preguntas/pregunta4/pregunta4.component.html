@@ -1,20 +1,14 @@
-<div>
-    <h2>Locations con ID PAR</h2>
+<mat-table [dataSource]="locations" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let location">{{ location.id }}</mat-cell>
+    </ng-container>
   
-    <table mat-table [dataSource]="locations" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let location">{{ location.name }}</mat-cell>
+    </ng-container>
   
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let location">{{ location.id }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let location">{{ location.name }}</td>
-      </ng-container>
-
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div>
+    <mat-header-row *matHeaderRowDef="['id', 'name']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id', 'name']"></mat-row>
+  </mat-table>
